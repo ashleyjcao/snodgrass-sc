@@ -1,1 +1,12 @@
-# snodgrass_sc
+## snodgrass_sc
+### Notes:
+ - 'precip test1.txt' as referred to a number of times in the notebooks is also the baseline atmospheric forcing provided in the forcing folder as 'baseline.txt'
+ - vegetative classes are provided in two sets: the original IGBP classes are under inputs as the file 'drv_vegp.dat' while the produced vegetative classes are 'drv_vegp-Copy1.dat'
+ - To switch between different atmospheric forcing files (precipitation and temperature), change reference to the correct met file under LSM/CLM Options in the notebooks. For SWE forcings, alter the h2osno_ini parameter under the 'drv_clmin.dat' file.
+ - To switch between different vegetative classes, make sure the correct veg file (either 'drv_vegp.dat' or 'drv_vegp-Copy1.dat') is referenced under 'copy CLM files'. Also ensure that the same veg file is named in the 'drv_clmin.dat' file. Then within the 'drv_vegm.dat' file, turn to 1 the vegetative class that you'd like to test. Only one class can be tested at a time in this single column model.
+### precip tests.ipynb
+Runs a series of different simulations for different precipitation and vegetative pairings. The vegetative pairings need to be manually changed between cells through the method above in 'Notes'. This notebook also includes a number of cells that are used as examples or in the sensitivity test or for calibration. These would require running simulations with baseline forcings and vegetative classes as explained in the thesis. Otherwise, analyses for precipitation and vegetative pairings include total ET and transpiration over the summer, soil moisture traces at 10 and 20 cm, and example time series of ET and trasnpiration with SWE. Some summer total analyses are also included for infiltration and runoff.
+### temp tests.ipynb
+Runs a series of different simulations for different temperature and vegetative pairings. The vegetative pairings need to be manually changed between cells through the method above in 'Notes'. Analyses include total ET and transpiration over the summer, soil moisture traces at 10 and 20 cm, and example time series of ET and trasnpiration with SWE. Some summer total analyses are also included for infiltration and runoff.
+### swe tests.ipynb
+Runs a series of different simulations for different initial SWE and vegetative pairings. The initial SWE and vegetative classes need to be manually changed between cells through the method above in 'Notes'. Analyses include total ET and transpiration over the summer, soil moisture traces at 10 and 20 cm, and example time series of ET and trasnpiration with SWE. Some summer total analyses are also included for infiltration and runoff.
